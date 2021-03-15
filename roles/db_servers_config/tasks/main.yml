@@ -17,7 +17,6 @@
     - mysql-community-server*
     - mysql-community-client*
     - python2-PyMySQL
-  notify: Enable and start MySQL
 
 - name: Enable and start MySQL
   systemd:
