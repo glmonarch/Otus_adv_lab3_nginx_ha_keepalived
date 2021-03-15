@@ -19,6 +19,12 @@
     - python2-PyMySQL
   notify: Enable and start MySQL
 
+- name: Enable and start MySQL
+  systemd:
+    name: mysqld
+    enabled: yes
+    state: started
+
 - name: Get temp MySQL root password
   shell: |
     grep 'A temporary password is generated for root@localhost' /var/log/mysqld.log | awk -F ' ' '{print $(NF)}'
