@@ -17,12 +17,7 @@
     - mysql-community-server*
     - mysql-community-client*
     - python2-PyMySQL
-
-- name: Start MySQL service and enable it at startup
-  systemd:
-    name: mysqld
-    enabled: yes
-    state: started
+  notify: Enable and start MySQL
 
 - name: Get temp MySQL root password
   shell: |
@@ -33,7 +28,7 @@
   debug:
     msg: "Temp MySQL root password is: {{ temp_root_password.stdout }}"
 
-- name: Print new MySQL root password
+- name: Print new MySQL root password (for debugging purposes)
   debug:
     msg: "New MySQL root password will be: {{ mysql_root_password }}"
 
