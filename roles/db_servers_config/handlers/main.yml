@@ -1,5 +1,5 @@
-- name: Enable and restart MySQL
+- name: Enable and start MySQL
   systemd:
     name: mysqld
     enabled: yes
-    state: restarted
+    state: started

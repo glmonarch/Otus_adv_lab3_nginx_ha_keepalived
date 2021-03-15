@@ -17,7 +17,7 @@
     - mysql-community-server*
     - mysql-community-client*
     - python2-PyMySQL
-  notify: Enable and restart MySQL
+  notify: Enable and start MySQL
 
 - name: Get temp MySQL root password
   shell: |
